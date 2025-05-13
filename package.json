@@ -1,0 +1,51 @@
+{
+  "name": "path-creator",
+  "version": "1.0.0",
+  "description": "A simple VS Code extension that creates files and folders from a path string.",
+  "engines": {
+    "vscode": "^1.60.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "Create: Create Path",
+        "title": "Path Creator: Create File Path"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "Create: Create Path",
+        "key": "ctrl+alt+n",
+        "mac": "cmd+alt+n",
+        "when": "editorTextFocus || filesExplorerFocus || !editorFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "biome check --write ./src",
+    "test": "node ./out/tests/runTest.test.js"
+  },
+  "keywords": [],
+  "author": "Caique Sobral",
+  "license": "MIT",
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/glob": "^8.1.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^22.15.17",
+    "@types/vscode": "^1.100.0",
+    "@vscode/test-electron": "^2.5.2",
+    "mocha": "^11.2.2",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "glob": "^11.0.2"
+  }
+}
