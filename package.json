@@ -1,13 +1,15 @@
 {
   "name": "path-creator",
   "publisher": "kyky-dev",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": "https://github.com/CaiqueSobral/vsc-PathCreator",
   "description": "A simple VS Code extension that creates files and folders from a path string.",
   "engines": {
     "vscode": "^1.60.0"
   },
-  "categories": ["Other"],
+  "categories": [
+    "Other"
+  ],
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
