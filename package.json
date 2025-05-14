@@ -9,24 +9,22 @@
   "engines": {
     "vscode": "^1.60.0"
   },
-  "categories": [
-    "Other"
-  ],
+  "categories": ["Other"],
   "pricing": "Free",
   "activationEvents": [],
   "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "Create: Create Path",
-        "title": "Path Creator: Create File Path"
+        "command": "Pathier: Create Path",
+        "title": "Pathier: Create Path"
       }
     ],
     "keybindings": [
       {
-        "command": "Create: Create Path",
+        "command": "Pathier: Create Path",
         "key": "ctrl+alt+n",
-        "mac": "cmd+alt+n",
+        "mac": "cmd+opt+n",
         "when": "editorTextFocus || filesExplorerFocus || !editorFocus"
       }
     ]
