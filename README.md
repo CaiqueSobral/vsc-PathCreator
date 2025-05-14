@@ -13,7 +13,7 @@ A simple VS Code extension that creates files and folders from a path string.
 ## Usage
 
 1. Press `Cmd+Opt+N` (or `Ctrl+Alt+N` on Windows) to directly activate the command
-   - Alternatively, open the command palette (`Ctrl+Shift+P` / `Cmd+Shift+P`) and type "Pathier"
+   - Alternatively, open the command palette (`Ctrl+Shift+P` / `Cmd+Opt+P`) and type "Pathier"
 2. Enter a path like `folder/subfolder/file.txt`
 3. The extension will create all required folders and the file, then open it
 
