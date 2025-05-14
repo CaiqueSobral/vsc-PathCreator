@@ -1,7 +1,7 @@
 {
   "name": "path-creator",
   "displayName": "Pathier",
-  "publisher": "Kyky",
+  "publisher": "kyky-dev",
   "version": "1.5.0",
   "icon": "image/icon.png",
   "repository": "https://github.com/CaiqueSobral/vsc-PathCreator",
@@ -9,9 +9,7 @@
   "engines": {
     "vscode": "^1.60.0"
   },
-  "categories": [
-    "Other"
-  ],
+  "categories": ["Other"],
   "pricing": "Free",
   "activationEvents": [],
   "main": "./out/extension.js",
