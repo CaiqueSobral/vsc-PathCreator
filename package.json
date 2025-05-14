@@ -2,7 +2,7 @@
   "name": "path-creator",
   "displayName": "Pathier",
   "publisher": "kyky-dev",
-  "version": "1.6.1",
+  "version": "1.6.2",
   "icon": "image/icon.png",
   "repository": "https://github.com/CaiqueSobral/vsc-PathCreator",
   "description": "A simple VS Code extension that creates files and folders from a path string.",
