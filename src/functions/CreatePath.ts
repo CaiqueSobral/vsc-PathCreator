@@ -5,7 +5,7 @@ import { window } from 'vscode';
 export async function createPath(
   rootPath: string,
   pathString: string,
-): Promise<[string, string]> {
+): Promise<string> {
   // STEP 1 -> Split the path by "/" and throw if no path provided
   const dirs = pathString.split('/');
 
@@ -15,26 +15,25 @@ export async function createPath(
 
   // STEP 3 -> Create the folders
   let dirPath = rootPath;
-  let lastFile = '';
+  let lastFileDir = '';
 
   for (const dir of dirs) {
     if (dir === '') continue;
 
-    dirPath = path.join(dirPath, dir);
-
     if (dir.includes('.')) {
-      await CreateFile(dirPath, dir);
-      lastFile = dir;
+      lastFileDir = path.join(dirPath, dir);
+      await CreateFile(lastFileDir, dir);
       continue;
     }
 
+    dirPath = path.join(dirPath, dir);
     CreateFolder(dirPath, dir);
   }
 
-  return [dirPath, lastFile];
+  return lastFileDir;
 }
 
-async function CreateFolder(dirPath: string, dirName: string) {
+function CreateFolder(dirPath: string, dirName: string) {
   // STEP 1 -> Create the directory if there is no file with the same name in the same level
   if (!fs.existsSync(dirPath)) {
     fs.mkdirSync(dirPath);

@@ -24,10 +24,10 @@ export async function disposableCallback() {
 
   // Step 3 -> Create the path and open the file
   try {
-    const [dirPath, fileName] = await createPath(rootPath, pathString);
+    const dirFile = await createPath(rootPath, pathString);
 
-    if (fileName) {
-      const document = await workspace.openTextDocument(dirPath);
+    if (dirFile) {
+      const document = await workspace.openTextDocument(dirFile);
       await window.showTextDocument(document);
     }
 
