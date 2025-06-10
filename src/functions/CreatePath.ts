@@ -4,6 +4,7 @@ import { window } from 'vscode';
 
 export async function createPath(
   rootPath: string,
+  activePath: string | undefined,
   pathString: string,
 ): Promise<string> {
   // STEP 1 -> Split the path by "/" and throw if no path provided
@@ -14,11 +15,12 @@ export async function createPath(
   }
 
   // STEP 3 -> Create the folders
-  let dirPath = rootPath;
+  let dirPath =
+    dirs[0] === '.' && activePath ? `${rootPath}/${activePath}` : rootPath;
   let lastFileDir = '';
 
   for (const dir of dirs) {
-    if (dir === '') continue;
+    if (dir === '' || dir === '.') continue;
 
     if (dir.includes('.')) {
       lastFileDir = path.join(dirPath, dir);

@@ -1,14 +1,24 @@
+import path from 'node:path';
 import { window, workspace } from 'vscode';
 import { createPath } from './CreatePath';
 
 export async function disposableCallback() {
   // STEP 1 -> Check if a workspace is open
   const workspaceFolders = workspace.workspaceFolders;
+
   if (!workspaceFolders) {
     window.showErrorMessage(
       'No workspace folder open. Please open a folder first.',
     );
     return;
+  }
+
+  let activeFilePath: string | undefined = undefined;
+  if (window.activeTextEditor) {
+    const relativePath = workspace.asRelativePath(
+      window.activeTextEditor.document.uri,
+    );
+    activeFilePath = path.dirname(relativePath);
   }
 
   const rootPath = workspaceFolders[0].uri.fsPath;
@@ -24,7 +34,7 @@ export async function disposableCallback() {
 
   // Step 3 -> Create the path and open the file
   try {
-    const dirFile = await createPath(rootPath, pathString);
+    const dirFile = await createPath(rootPath, activeFilePath, pathString);
 
     if (dirFile) {
       const document = await workspace.openTextDocument(dirFile);
