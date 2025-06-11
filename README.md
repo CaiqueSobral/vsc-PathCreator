@@ -8,7 +8,6 @@ A simple VS Code extension that creates files and folders from a path string.
 - Keyboard shortcut: `Cmd+Opt+N` (or `Ctrl+Alt+N` on Windows)
 - Automatically creates all necessary folders in the path
 - Uses "/" as the path separator
-- The last item in the path is treated as the file name
 
 ## Usage
 
@@ -22,6 +21,7 @@ A simple VS Code extension that creates files and folders from a path string.
 - `file.txt` - Creates a file at the workspace root
 - `folder/file.txt` - Creates a folder and a file inside it
 - `folder1/folder2/folder3/file.js` - Creates a nested folder structure with a file
+- `./file.ts` - Creates a file in the same folder as the active editor
 
 ## Requirements
 
@@ -36,6 +36,14 @@ Currently, this extension doesn't provide any additional settings.
 None at this time.
 
 ## Release Notes
+
+### 1.6.3
+
+You can now use ./ in the starting prompt to create folder/files relative to the folder of the active editor
+
+### 1.5.0
+
+Add suport for multiple files being created in a nested folder
 
 ### 0.1.0
 
